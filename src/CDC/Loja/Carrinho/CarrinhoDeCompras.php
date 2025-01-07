@@ -1,8 +1,9 @@
 <?php
 
 namespace CDC\Loja\Carrinho;
-use ArrayObject;
+
 use CDC\Loja\Produto\Produto;
+use ArrayObject;
 
 class CarrinhoDeCompras
 {
@@ -26,13 +27,15 @@ class CarrinhoDeCompras
 
     public function maiorValor()
     {
-        if (count($this->getItens()) === 0) {
+        if (count($this->getProdutos()) === 0) {
             return 0;
         }
-        $maiorValor = $this->getProdutos()[0]->getValor();
+
+        $maiorValor = $this->getProdutos()[0]->getValorUnitario();
+
         foreach ($this->getProdutos() as $produto) {
-            if ($maiorValor < $produto->getValor()) {
-                $maiorValor = $produto->getValor();
+            if ($maiorValor < $produto->getValorUnitario()) {
+                $maiorValor = $produto->getValorUnitario();
             }
         }
         return $maiorValor;
