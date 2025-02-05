@@ -6,13 +6,13 @@ class Pedido
 {
     private $cliente;
     private $valorTotal;
-    private $quantidadedeItens;
+    private $quantidadeItens;
 
     public function __construct($cliente, $valorTotal, $quantidadedeItens)
     {
         $this->cliente = $cliente;
         $this->valorTotal = $valorTotal;
-        $this->quantidadedeItens = $quantidadedeItens;
+        $this->quantidadeItens = $quantidadedeItens;
     }
 
     public function getCliente()
@@ -25,9 +25,9 @@ class Pedido
         return $this->valorTotal;
     }
 
-    public function getQuantidadedeItens()
+    public function getQuantidadeItens()
     {
-        return $this->quantidadedeItens;
+        return $this->quantidadeItens;
     }
 
 
